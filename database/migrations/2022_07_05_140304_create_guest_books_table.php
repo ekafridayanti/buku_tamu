@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('visitor_books', function (Blueprint $table) {
+        Schema::create('guest_books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('institute');
