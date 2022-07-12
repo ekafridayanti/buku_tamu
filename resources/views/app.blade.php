@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://www.onekingwest.com/wp-content/uploads/guest-book-logo.png" type="image/icon type">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/952/225/png-transparent-computer-icons-address-book-guest-book-icon-miscellaneous-rectangle-reading.png" type="image/icon type">
 
     <title>Buku Tamu | @yield('title') </title>
 
@@ -36,14 +36,12 @@
                 <h3>@yield('title')</h3>
               </div>
             </div>
-
             <div class="clearfix"></div>
-
             @yield('content')
           </div>
         </div>
+ 
         <!-- /page content -->
-
         @include('_components.footer')
       </div>
     </div>
