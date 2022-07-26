@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <img src="{{ asset('template/production/images/dashboard.png')  }}" alt="">
+        <img src="{{ asset('template/production/images/Dashboard.png')  }}" alt="">
 
     </div>
 </div>
