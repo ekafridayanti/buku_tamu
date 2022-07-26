@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\GuestBookController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\AuthController;
 
 
@@ -10,14 +11,23 @@ Route::get('/', function () {
     return view('app');
 });
 
+
+Route::get('/tamu', [GuestController::class, 'index'])->name('guestinput.content');
+Route::post('tamu', [GuestController::class, 'create'])->name('guestinput.create');
+
+
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/buku-tamu', [GuestBookController::class, 'index']);
-    Route::post('buku-tamu', [GuestBookController::class, 'create']);
+    Route::get('/buku-tamu', [GuestBookController::class, 'index'])->name('guest.content');
+    Route::get('/buku-tamu-add', [GuestBookController::class, 'add'])->name('guest.add');
+    Route::post('buku-tamu', [GuestBookController::class, 'create'])->name('guest.create');
+    Route::delete('buku-tamu/delete/{id}', [GuestBookController::class, 'delete'])->name('guest.delete');
+    Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
 
 Route::group(['middleware' => ['guest']], function() {
     Route::get('/login', [AuthController::class, 'index'])->name('auth.login');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.attempt');
+    
 });
 

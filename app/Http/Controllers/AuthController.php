@@ -22,11 +22,17 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('buku-tamu');
         }
 
         return back()->withErrors([
             'username' => 'The provided credentials do not match our records.',
         ])->onlyInput('username');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('auth.login');
     }
 }

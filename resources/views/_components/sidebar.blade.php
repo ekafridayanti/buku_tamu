@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Buku Tamu</span></a>
+        <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>Buku Tamu</span></a>
       </div>
       
 
@@ -14,7 +14,7 @@
         </div>
         <div class="profile_info">
           <span>Welcome,</span>
-          <h2>Eka Frida</h2>
+          <h2>Eka</h2>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -35,8 +35,8 @@
         <div class="menu_section">
           <h3>Menu</h3>
           <ul class="nav side-menu">
-            <li><a href="javascript:void(0)"><i class="fa fa-table"></i> Buku Tamu </a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Cetak Data Tamu </a></li>
+            <li><a href="{{ route('guest.content') }}" class="nav-link {{ (request()->routeIs('guest.*')) ? 'active' : '' }}"><i class="fa fa-table"></i> Buku Tamu </a></li>
+            <li><a href="{{ route('guestinput.content') }}" class="nav-link {{ (request()->routeIs('guestinput.*')) ? 'active' : '' }}"><i class="fa fa-laptop"></i> Cetak Data Tamu </a></li>
           </ul>
         </div>
 

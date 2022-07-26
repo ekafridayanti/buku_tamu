@@ -6,9 +6,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://w7.pngwing.com/pngs/952/225/png-transparent-computer-icons-address-book-guest-book-icon-miscellaneous-rectangle-reading.png" type="image/icon type">
+    <link rel="icon" href="{{ asset('template/production') }}/images/Logo BKPSDM.png" type="image/icon type">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />     
+    <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
+    <style>
+      .kbw-signature { width: 100%; height: 200px;}
+      #sig canvas{ width: 100% !important; height: auto;}
+    </style>
 
-    <title>Buku Tamu | @yield('title') </title>
+    <title>BKPSDM Denpasar | @yield('title') </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('template') }}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,5 +63,16 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('template') }}/build/js/custom.min.js"></script>
+  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+    <script type="text/javascript">
+        var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
+        $('#clear').click(function(e) {
+            e.preventDefault();
+            sig.signature('clear');
+            $("#signature").val('');
+        });
+    </script>
   </body>
 </html>

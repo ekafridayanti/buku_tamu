@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Buku Tamu | Login</title>
-
+    <link rel="icon" href="{{ asset('template/production') }}/images/Logo BKPSDM.png" type="image/icon type">
     <!-- Bootstrap -->
     <link href="{{ asset('template') }}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -20,10 +20,12 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('template') }}/build/css/custom.min.css" rel="stylesheet">
+
   </head>
 
   <body class="login">
-    <div>
+    <div class="text-center">
+      <img src="{{ asset('template/production') }}/images/Logo Atas Layanan BKPSDM.png" alt="logo header" class="rounded">
       <a class="hiddenanchor" id="signin"></a>
 
       <div class="login_wrapper">

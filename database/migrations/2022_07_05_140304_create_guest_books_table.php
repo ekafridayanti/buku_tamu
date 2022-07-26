@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('institute');
             $table->string('needs');
+            $table->string('notlp');
             $table->text('signature');
             $table->dateTime('created');
             $table->timestamps();
