@@ -42,8 +42,8 @@
                       <td>{{ $g->created }}</td>
                       <td>{{ $g->name }}</td>
                       <td>{{ $g->institute }}</td>
-                      <td>{{ $g->notlp }}</td>
                       <td>{{ $g->needs }}</td>
+                      <td>{{ $g->notlp }}</td>
                       <td>
                         <img src="{{ $g->signature }}" alt="ttd" style="max-width: 100px">
                       </td>
@@ -63,7 +63,7 @@
                       <th>No Telepon</th>
                       <th>TTD</th>
                       <th>Action</th>
-                      
+                     
                   </tfoot>
                 </table>
                 <div>

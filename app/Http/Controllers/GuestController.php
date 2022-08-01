@@ -23,10 +23,8 @@ class GuestController extends Controller
                 'signature'=> $request->signature,
                 'created'=> now()
             ]);
-            return redirect()->back()->with([
-                'f_bg' => 'success',
-                // 'f_title' => 'Hapus data sukses.',
-                'f_msg' => 'Data Anda berhasil ditambah. Silahkan menuju resepsionis BKPSDM!',
+            return redirect()->route('success')->with([
+                'name'=>$request->name
             ]);
             
     }

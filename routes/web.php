@@ -10,7 +10,9 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('app');
 });
-
+Route::get('/success', function () {
+    return view('GuestSuccess');
+})->name('success');
 
 Route::get('/tamu', [GuestController::class, 'index'])->name('guestinput.content');
 Route::post('tamu', [GuestController::class, 'create'])->name('guestinput.create');
