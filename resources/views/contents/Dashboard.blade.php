@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <img src="{{ asset('template/production/images/Dashboard.png')  }}" alt="">
+        <img src="{{ asset('template/production/images/dashboard.jpeg') }}" alt="" style="min-width: 100%">
 
     </div>
 </div>
