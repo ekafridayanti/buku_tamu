@@ -1,4 +1,4 @@
-@extends('app')
+@extends('apps.app-admin')
 
 @section('title', 'Buku Tamu')
 
@@ -18,11 +18,11 @@
                 <a href="{{ route("guest.add") }}">
                   <button type="button" class="btn btn-primary">Tambah Tamu</button>
                 </a>
-                <div class="clearfix"></div>
+                
               </div>
               <div class="x_content">
-                @include('_components.alert-massage')
-                <table class="table table-striped">
+                @include('components.admin.alert-massage')
+                <table class="table table-striped" style="overflow-x:auto;">
                   <thead>
                     <tr>
                       <th>No</th>

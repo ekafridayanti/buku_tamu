@@ -1,4 +1,4 @@
-@extends('app')
+@extends('apps.app-admin')
 
 @section('title', 'Tambah Data Tamu')
 

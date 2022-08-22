@@ -12,11 +12,10 @@ class DashboardController extends Controller
         $data = [
             'guestTotal' => DB::table('guest_books')->count(),
             'guestTotalToday' => DB::table('guest_books')
-                                    ->where('created', now()->toDateString())
+                                    ->whereDate('created', now()->toDateString())
                                     ->count(),
             'userTotal' => DB::table('users')->count(),
         ];
-
-        return view('contents.Dashboard', $data);
+        return view('contents.admin.Dashboard', $data);
     }
 }

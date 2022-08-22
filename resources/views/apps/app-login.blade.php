@@ -25,9 +25,9 @@
 
   <body class="login">
     <div class="text-center">
-      <img src="{{ asset('template/production') }}/images/Logo Atas Layanan BKPSDM.png" alt="logo header" class="rounded">
+      
       <a class="hiddenanchor" id="signin"></a>
-
+      <img src="{{ asset('template/production') }}/images/Logo Atas Layanan BKPSDM.png" alt="logo header" style="width: 100%; height: auto" class="rounded">
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">

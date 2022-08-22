@@ -11,7 +11,7 @@ Route::get('/', function () {
     return view('app');
 });
 Route::get('/success', function () {
-    return view('GuestSuccess');
+    return view('contents.guest.GuestSuccess');
 })->name('success');
 
 Route::get('/tamu', [GuestController::class, 'index'])->name('guestinput.content');
@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/buku-tamu-cetak', [GuestBookController::class, 'print'])->name('guest.print');
+
 });
 
 

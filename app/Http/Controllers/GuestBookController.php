@@ -11,7 +11,7 @@ class GuestBookController extends Controller
     {
         $guest = DB::table('guest_books')->paginate(25);
         $data = ['guest'=>$guest];
-        return view('contents.GuestBookIndex', $data);
+        return view('contents.admin.GuestBookIndex', $data);
     }
 
     public function create(Request $request)
@@ -42,10 +42,14 @@ class GuestBookController extends Controller
     
     public function input()
     {
-        return view('contents.GuestInputIndex');
+        return view('contents.admin.GuestInputIndex');
     }
     public function add()
     {
-        return view('contents.GuestAdd');
+        return view('contents.admin.GuestAdd');
+    }
+    public function print()
+    {
+        return view ('contents.admin.GuestReport');
     }
 }

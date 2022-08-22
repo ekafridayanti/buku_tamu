@@ -9,11 +9,12 @@ class GuestController extends Controller
 {
     public function index()
     {
-        return view('contents.GuestInputIndex');
+        return view('contents.guest.GuestInput');
     }
-
+    
     public function create(Request $request)
     {
+        
         DB::table('guest_books')
             ->insert([
                 'name'=> $request->name,
@@ -21,7 +22,7 @@ class GuestController extends Controller
                 'needs'=> $request->needs,
                 'notlp'=> $request->notlp,
                 'signature'=> $request->signature,
-                'created'=> now()
+                'created'=> date("Y-m-d H:i:s", strtotime($request->date))
             ]);
             return redirect()->route('success')->with([
                 'name'=>$request->name

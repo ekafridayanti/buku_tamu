@@ -22,7 +22,8 @@
     <link href="{{ asset('template') }}/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ asset('template') }}/vendors/nprogress/nprogress.css" rel="stylesheet">
-
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{ asset('template') }}/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('template') }}/build/css/custom.min.css" rel="stylesheet">
   </head>
@@ -30,9 +31,9 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        @include('_components.sidebar')
+        @include('components.admin.sidebar')
 
-        @include('_components.navigation')
+        @include('components.admin.navigation')
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -48,7 +49,7 @@
         </div>
  
         <!-- /page content -->
-        @include('_components.footer')
+        @include('components.admin.footer')
       </div>
     </div>
 
@@ -74,5 +75,9 @@
             $("#signature").val('');
         });
     </script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ asset('template') }}/vendors/moment/min/moment.min.js"></script>
+    <script src="{{ asset('template') }}/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
   </body>
 </html>
