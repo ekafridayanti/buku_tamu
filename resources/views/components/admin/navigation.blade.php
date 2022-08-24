@@ -8,8 +8,8 @@
         <ul class=" navbar-right">
           <li class="nav-item dropdown open" style="padding-left: 15px;">
             <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-              {{ Auth::user()->name }}
               <img src="{{ asset('template/production') }}/images/img.jpg" alt="">
+              {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
               
@@ -17,7 +17,7 @@
             </div>
           </li>
 
-          <li role="presentation" class="nav-item dropdown open">
+          {{-- <li role="presentation" class="nav-item dropdown open">
             <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
               <li class="nav-item">
                 <a class="dropdown-item">
@@ -76,7 +76,7 @@
                 </div>
               </li>
             </ul>
-          </li>
+          </li> --}}
         </ul>
       </nav>
     </div>

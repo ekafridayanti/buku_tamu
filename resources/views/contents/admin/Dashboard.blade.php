@@ -31,22 +31,22 @@
                 </div>
             </div>
 
-            {{-- <div class="col-md-4 col-sm-4">
+            <div class="col-md-4 col-sm-4">
                 <div class="x_panel tile fixed_height_320" style="height: 200px">
                     <div class="x_title">
-                        <h2>Total Tamu <i class="fa fa-user"></i></h2>
+                        <h2>Total Admin <i class="fa fa-user"></i></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="tile_count" style="margin-left: 40%">
                         <div class="count" style="font-size: 80px" style="margin-top: 0cm;">{{ $userTotal  }}</div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             
-            <div class="col-md-4 col-sm-4">
+            {{-- <div class="col-md-4 col-sm-4">
                 <div class="x_panel tile fixed_height_320" style="height: 170px">
                     <div class="x_title">
-                        <h2>Total Tamu <i class="fa fa-user"></i></h2>
+                        <h2>Total Admin <i class="fa fa-user"></i></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="tile_count" style="margin-left: 30%">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
             
         </div>
