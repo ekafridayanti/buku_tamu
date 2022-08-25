@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/buku-tamu-cetak', [GuestBookController::class, 'doPrint'])->name('guest.doPrint');
     Route::get('/buku-tamu-cetak', [GuestBookController::class, 'print'])->name('guest.print');
 
 });
