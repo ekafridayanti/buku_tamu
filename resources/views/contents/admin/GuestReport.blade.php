@@ -26,7 +26,11 @@
          </div>
          <br><br><br><br>
          <div class="text-center">
+
             <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Print</button>
+
+            <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Cetak</button>
+
          </div>
         </div>
         </form>
