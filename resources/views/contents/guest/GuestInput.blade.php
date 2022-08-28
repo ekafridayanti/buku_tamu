@@ -18,9 +18,8 @@
             <label for="date" class="col-form-label">Tanggal *</label>
             <input name="date" id="datetime-picker" type="text" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy" value="{{ $currentTime  }}" readonly/>
             <i class="fa-calendar-o" required='required'></i>
-        </div>
-
-      </div>
+          </div>
+       </div>
         <div class="row">
           <div class="col-md-6 form-group">
             <label for="name" class="col-form-label">Name *</label>

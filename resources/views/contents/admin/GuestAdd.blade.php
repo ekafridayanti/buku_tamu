@@ -1,3 +1,7 @@
+@php
+    $currentTime = Carbon\Carbon::now()->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y h:i a');
+@endphp
+
 @extends('apps.app-admin')
 
 @section('title', 'Tambah Data Tamu')
@@ -12,9 +16,19 @@
                 <div class="clearfix"></div>
             </div>
             <div class="login-content">
+                @include('components.alert-massage')
                 <br />
                 <form action= {{ route("guest.create") }} method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Tanggal <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input name="date" id="datetime-picker" type="text" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy" value="{{ $currentTime  }}" readonly/>
+                          {{-- <i class="fa-calendar-o" required='required'></i> --}}
+                        </div>
+                    </div>
+
                     <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama <span class="required">*</span>
                         </label>
@@ -30,21 +44,18 @@
                             <input type="text" id="institute" name="institute" required="required" class="form-control">
                         </div>
                     </div>
-
-                    <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan</label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <input id="needs" class="form-control" type="text" name="needs">
-                        </div>
-                    </div>
-
                     <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">No Telepon</label>
                         <div class="col-md-6 col-sm-6 ">
                             <input id="notlp" class="form-control" type="text" name="notlp">
                         </div>
                     </div>
-
+                    <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan</label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <textarea name="needs" id="needs" cols="30" rows="5" class="form-control" type="text"></textarea>
+                        </div>
+                    </div>
                     <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Tanda Tangan</label>
                         <div class="col-md-6 col-sm-6">

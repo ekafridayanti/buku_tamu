@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use PDF;
+use Carbon\Carbon;
 class GuestBookController extends Controller
 {
     public function index()
@@ -16,6 +17,15 @@ class GuestBookController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'name' => "required",
+            'institute' => "required",
+            'needs' => "required",
+            'notlp' => "required",
+            'signature' => "required",  
+        ],[
+            'signature.required'=>'Tanda tangan tidak boleh kosong!']);
+
         DB::table('guest_books')
             ->insert([
                 'name'=> $request->name,
@@ -23,7 +33,7 @@ class GuestBookController extends Controller
                 'needs'=> $request->needs,
                 'notlp'=> $request->notlp,
                 'signature'=> $request->signature,
-                'created'=> now()
+                'created'=> Carbon::now()
             ]);
 
             return redirect()->route("guest.content");

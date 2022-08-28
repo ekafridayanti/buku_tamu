@@ -9,27 +9,28 @@
         </div>
         <form action="{{ route('guest.doPrint') }}" method="post">
             @csrf
-        <div class="x_content">
-          <div class="col-md-12 col-sm-12  ">
-            <div class="profile_title">
-                <div class="col-md-6">
-                  <h2 style="font-size: 15px">Pilih Rentangan Waktu</h2>
-                </div>
-                <div class="col-md-6">
-                  <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
-                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                    <span id="date-range">January 12, 2022 - January 28, 2022</span> <b class="caret"></b>
-                    <input type="hidden" value="" id="date-range-value" name="date_range">
+          <div class="x_content">
+            <div class="col-md-12 col-sm-12  ">
+              <div class="profile_title">
+                  <div class="col-md-6">
+                    <h2 style="font-size: 15px">Pilih Rentangan Waktu</h2>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                      <span id="date-range">January 12, 2022 - January 28, 2022</span> <b class="caret"></b>
+                      <input type="hidden" value="" id="date-range-value" name="date_range">
+                    </div>
                   </div>
                 </div>
-              </div>
-         </div>
-         <br><br><br><br>
-         <div class="text-center">
-            <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Cetak</button>
-         </div>
-        </div>
+          </div>
+          <br><br><br><br>
+          <div class="text-center">
+              <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Cetak</button>
+          </div>
+          </div>
         </form>
+        
       </div>
     </div>
 </div>
