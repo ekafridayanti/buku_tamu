@@ -1,22 +1,27 @@
+@php
+    $currentTime = Carbon\Carbon::now()->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y h:i a');
+@endphp
+
 @extends('apps.app-guest')
 
 @section('content-1')
-<div class="col-md-6"> 
+<div class="col-md-6">
+
     <div class="box">
       <img class="text-center" style="max-width: 90%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021 putih.png') }}" alt="">
       <h3 class="heading">Kota Denpasar</h3>
       <p class="text-center" style="color:#ccda46;">~Silahkan lengkapi data tamu Anda!~</p>
       <form class="mb-5" method="post" id="contactForm" name="contactForm">
-        @csrf  
+        @csrf
         <div class="row">
           <div class="col-md-12 form-group">
             <label for="date" class="col-form-label">Tanggal *</label>
-            <input name="date" id="date" type="datetime-local" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy"/>
-            <i class="fa-calendar-o" required='required'></i>  
+            <input name="date" id="datetime-picker" type="text" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy" value="{{ $currentTime  }}" readonly/>
+            <i class="fa-calendar-o" required='required'></i>
         </div>
-          
+
       </div>
-        <div class="row">                    
+        <div class="row">
           <div class="col-md-6 form-group">
             <label for="name" class="col-form-label">Name *</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Lengkap" required='required'>
@@ -37,7 +42,7 @@
             <label for="needs" class="col-form-label">Keperluan *</label>
             <textarea class="form-control" name="needs" id="needs" cols="30" rows="5" required='required'></textarea>
           </div>
-        </div>   
+        </div>
         <div class="row">
           <div class="col-md-12 form-group">
             <label class="col-form-label" for="">Tanda Tangan:</label>
@@ -52,10 +57,11 @@
         {{-- <div class="row">
           <div class="col-md-6">
             <input type="submit" value="Send Message" class="btn btn-block btn-primary rounded-0 py-2 px-4">
-            
+
           </div>
         </div> --}}
       </form>
    </div>
   </div>
 @endsection
+

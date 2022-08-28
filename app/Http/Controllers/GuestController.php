@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,10 +14,18 @@ class GuestController extends Controller
         // $data = ['guest'=>$guest];
         return view('contents.guest.GuestInput');
     }
-    
+
     public function create(Request $request)
     {
-        
+        $request->validate([
+            'name' => "required",
+            'institute' => "required",
+            'needs' => "required",
+            'notlp' => "required",
+            'signature' => "required",
+        ]);
+
+
         DB::table('guest_books')
             ->insert([
                 'name'=> $request->name,
@@ -24,11 +33,11 @@ class GuestController extends Controller
                 'needs'=> $request->needs,
                 'notlp'=> $request->notlp,
                 'signature'=> $request->signature,
-                'created'=> date("Y-m-d H:i:s", strtotime($request->date))
+                'created'=> Carbon::now()
             ]);
             return redirect()->route('success')->with([
                 'name'=>$request->name
             ]);
-            
+
     }
 }
