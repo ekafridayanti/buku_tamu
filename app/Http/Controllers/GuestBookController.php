@@ -22,7 +22,7 @@ class GuestBookController extends Controller
             'institute' => "required",
             'needs' => "required",
             'notlp' => "required",
-            'signature' => "required",  
+            'signature' => "required",
         ],[
             'signature.required'=>'Tanda tangan tidak boleh kosong!']);
 
@@ -66,24 +66,55 @@ class GuestBookController extends Controller
     }
 
     public function doPrint(Request $request) {
-        $dateRange =  $request->date_range;
+        $request->validate([
+            'custom_start' => ['nullable', 'date', 'required_without:range', 'required_with:custom_end'],
+            'custom_end' => ['nullable', 'date', 'required_without:range', 'required_with:custom_start', 'after_or_equal:custom_start'],
+            'range' => ['nullable', 'numeric', 'required_without:custom_start,custom_end']
+        ]);
 
-        if ($dateRange === null) {
-            return redirect()->back();
-        }
+        if (empty($request->range)) {
+            $startDate = strtotime($request->custom_start);
+            $startDate = date("Y-m-d H:i:s", $startDate);
 
-        $range = explode(" - ", $dateRange);
+            $endDate = strtotime($request->custom_end);
+            $endDate = date("Y-m-d H:i:s", $endDate);
 
-        $startDate = strtotime($range[0]);
-        $startDate = date("Y-m-d H:i:s", $startDate);
-
-        $endDate = strtotime($range[1]);
-        $endDate = date("Y-m-d H:i:s", $endDate);
-
-        $x =  DB::table('guest_books')
-                    ->whereDate('created', '>=', $startDate)
-                    ->whereDate('created', '<=', $endDate)
+            $x =  DB::table('guest_books')
+                    ->whereDate('created', '>=', $request->custom_start)
+                    ->whereDate('created', '<=', $request->custom_end)
                     ->get();
+
+            $dateStringStart = Carbon::parse($startDate)
+                                        ->locale('id')
+                                        ->settings(['formatFunction' => 'translatedFormat'])
+                                        ->format('l, j F Y');
+
+            $dateStringEnd = Carbon::parse($endDate)
+                                        ->locale('id')
+                                        ->settings(['formatFunction' => 'translatedFormat'])
+                                        ->format('l, j F Y');
+
+            $dateRange = "$dateStringStart - $dateStringEnd";
+        } else {
+            $startDate = now()->subDays($request->range)->endOfDay()->toDateTimeString();
+            $endDate = now()->toDateTimeString();
+
+            $x =  DB::table('guest_books')
+                    ->whereDate('created', '>=', $startDate)
+                    ->get();
+
+            $dateStringStart = Carbon::parse($startDate)
+                                        ->locale('id')
+                                        ->settings(['formatFunction' => 'translatedFormat'])
+                                        ->format('l, j F Y');
+
+            $dateStringEnd = Carbon::parse($endDate)
+                                        ->locale('id')
+                                        ->settings(['formatFunction' => 'translatedFormat'])
+                                        ->format('l, j F Y');
+
+            $dateRange = "$dateStringStart - $dateStringEnd";
+        }
 
         $data = [
             'data' => $x,
