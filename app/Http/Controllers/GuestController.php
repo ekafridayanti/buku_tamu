@@ -9,6 +9,8 @@ class GuestController extends Controller
 {
     public function index()
     {
+        // $guest = DB::table('guest_books');
+        // $data = ['guest'=>$guest];
         return view('contents.guest.GuestInput');
     }
     

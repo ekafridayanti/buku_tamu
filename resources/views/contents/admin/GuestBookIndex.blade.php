@@ -22,7 +22,7 @@
               </div>
               <div class="x_content">
                 @include('components.admin.alert-massage')
-                <table class="table table-striped" style="overflow-x:auto;">
+                <table class="table table-striped" style="overflow-x:auto; ">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -42,7 +42,7 @@
                       <td>{{ $g->created }}</td>
                       <td>{{ $g->name }}</td>
                       <td>{{ $g->institute }}</td>
-                      <td>{{ $g->needs }}</td>
+                      <td style="word-break: break-all">{{ $g->needs }}</td>
                       <td>{{ $g->notlp }}</td>
                       <td>
                         <img src="{{ $g->signature }}" alt="ttd" style="max-width: 100px">
@@ -109,7 +109,7 @@
                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Keperluan<span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input name = "needs" type="text" id="needs" required="required" class="form-control ">
+                      <input name = "needs" type="textarea" id="needs" required="required" class="form-control ">
                     </div>
                     
                   </div>

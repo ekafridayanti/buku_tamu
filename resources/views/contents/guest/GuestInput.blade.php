@@ -7,7 +7,15 @@
       <h3 class="heading">Kota Denpasar</h3>
       <p class="text-center" style="color:#ccda46;">~Silahkan lengkapi data tamu Anda!~</p>
       <form class="mb-5" method="post" id="contactForm" name="contactForm">
-        @csrf              
+        @csrf  
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label for="date" class="col-form-label">Tanggal *</label>
+            <input name="date" id="date" type="datetime-local" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy"/>
+            <i class="fa-calendar-o" required='required'></i>  
+        </div>
+          
+      </div>
         <div class="row">                    
           <div class="col-md-6 form-group">
             <label for="name" class="col-form-label">Name *</label>
@@ -20,25 +28,16 @@
         </div>
         <div class="row">
           <div class="col-md-12 form-group">
-            <label for="needs" class="col-form-label">Keperluan *</label>
-            <input type="text" class="form-control" name="needs" id="needs" placeholder="Masukkan Keperluan Anda" required='required'>
-          </div>
-        </div>   
-        <div class="row">
-          <div class="col-md-12 form-group">
             <label for="notlp" class="col-form-label">No Telepon *</label>
             <input type="number" class="form-control" name="notlp" id="notlp" placeholder="No Handphone" required='required'>
           </div>
         </div>
         <div class="row">
-            <div class="col-md-12 form-group">
-              <label for="date" class="col-form-label">Tanggal *</label>
-              <input name="date" id="date" type="datetime-local" class='form-control'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy"/>
-              <i class="fa-calendar-o" required='required'></i>  
-            </div>
-            
-        </div>
-        
+          <div class="col-md-12 form-group">
+            <label for="needs" class="col-form-label">Keperluan *</label>
+            <textarea class="form-control" name="needs" id="needs" cols="30" rows="5" required='required'></textarea>
+          </div>
+        </div>   
         <div class="row">
           <div class="col-md-12 form-group">
             <label class="col-form-label" for="">Tanda Tangan:</label>
