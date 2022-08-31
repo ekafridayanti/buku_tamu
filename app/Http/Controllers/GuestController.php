@@ -23,7 +23,10 @@ class GuestController extends Controller
             'needs' => "required",
             'notlp' => "required",
             'signature' => "required",
-        ]);
+        ],[
+            'signature.required'=>'Tanda tangan tidak boleh kosong',
+            
+            ]);
 
 
         DB::table('guest_books')

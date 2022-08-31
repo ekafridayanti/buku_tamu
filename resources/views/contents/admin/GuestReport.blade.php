@@ -47,7 +47,9 @@
           </div>
 
           <br><br><br><br>
-          <div class="text-center">
+          <p class="text-center" style="color: red">Silahkan pilih salah satu rentangan waktu antara custom atau tersedia!</p>
+          
+          <div class="text-center"> 
             <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Cetak</button>
           </div>
         </div>

@@ -8,11 +8,12 @@
 <div class="col-md-6">
 
     <div class="box">
-      <img class="text-center" style="max-width: 90%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021 putih.png') }}" alt="">
-      <h3 class="heading">Kota Denpasar</h3>
+      <img class="text-center" style="max-width: 90%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021.png') }}" alt="">
+      <br><br>
       <p class="text-center" style="color:#ccda46;">~Silahkan lengkapi data tamu Anda!~</p>
       <form class="mb-5" method="post" id="contactForm" name="contactForm">
         @csrf
+        @include('components.alert-massage')
         <div class="row">
           <div class="col-md-12 form-group">
             <label for="date" class="col-form-label">Tanggal *</label>
@@ -23,23 +24,23 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label for="name" class="col-form-label">Name *</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Lengkap" required='required'>
+            <input type="text" class="form-control" name="name" value="{{ old ('name') }}" id="name" placeholder="Nama Lengkap" required='required'>
           </div>
           <div class="col-md-6 form-group">
             <label for="institute" class="col-form-label">Instansi</label>
-            <input type="text" class="form-control" name="institute" id="institute" placeholder="Instansi Anda" required='required'>
+            <input type="text" class="form-control" name="institute" value="{{ old ('institute') }}" id="institute" placeholder="Instansi Anda" required='required'>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 form-group">
             <label for="notlp" class="col-form-label">No Telepon *</label>
-            <input type="number" class="form-control" name="notlp" id="notlp" placeholder="No Handphone" required='required'>
+            <input type="number" class="form-control" name="notlp" value="{{ old ('notlp') }}" id="notlp" placeholder="No Handphone" required='required'>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 form-group">
             <label for="needs" class="col-form-label">Keperluan *</label>
-            <textarea class="form-control" name="needs" id="needs" cols="30" rows="5" required='required'></textarea>
+            <textarea class="form-control" name="needs" id="needs" cols="30" rows="5" required='required' value="{{ old ('needs') }}"></textarea>
           </div>
         </div>
         <div class="row">

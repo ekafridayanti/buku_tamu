@@ -20,19 +20,20 @@
                 </a>
                 
               </div>
-              <div class="x_content">
+              
+              <div id="datatable_wrapper" class="x_content dataTables_wrapper container-fluid dt-bootstrap">
                 @include('components.admin.alert-massage')
-                <table class="table table-striped" style="overflow-x:auto; ">
+                <table class="table table-striped dataTables_wrapper" style="overflow-x:auto; ">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Nama</th>
-                      <th>Instansi</th>
-                      <th>Keperluan</th>
-                      <th>No Telepon</th>
-                      <th>TTD</th>
-                      <th>Action</th>
+                      <th class="text-center">No</th>
+                      <th class="text-center">Tanggal</th>
+                      <th class="text-center">Nama</th>
+                      <th class="text-center">Instansi</th>
+                      <th class="text-center">Keperluan</th>
+                      <th class="text-center">No Telepon</th>
+                      <th class="text-center">TTD</th>
+                      <th class="text-center">Action</th>
                     </tr>
                   </thead>
                   <tbody>
