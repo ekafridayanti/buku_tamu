@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/buku-tamu-cetak', [GuestBookController::class, 'doPrint'])->name('guest.doPrint');
     Route::get('/buku-tamu-cetak', [GuestBookController::class, 'print'])->name('guest.print');
+    // Route::get('/buku-tamu-unduh', [GuestBookController::class, 'download_pdf']);
 
 });
 

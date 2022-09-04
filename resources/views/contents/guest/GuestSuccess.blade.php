@@ -3,10 +3,10 @@
 <div class="col-md-6">
               
   <div class="box text-center">
-    <img class="text-center" style="max-width: 90%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021.png') }}" alt="">
-  <br>
-    <h3 class="heading">Kota Denpasar</h3>
-    <p style="font-size: 20px; color: black; font-style: bold" style="font-style: bold">Terimakasih {{ Session::get('name') }} telah berkunjung di BKPSDM Kota Denpasar</p>
+    <img class="text-center" style="max-width: 100%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021.png') }}" alt="">
+    <br><br>
+    
+    <p style="font-size: 20px; color: #73879C; font-style: bold" style="font-style: bold">Terimakasih {{ Session::get('name') }} telah berkunjung di BKPSDM Kota Denpasar</p>
     <i class="material-icons " style="font-size:48px;color:green">check_circle</i>
     {{-- <h3 style="color: black">Submit Data {{ Session::get('name') }} Berhasil</h3> --}}
     

@@ -18,7 +18,7 @@
               </div>
 
               <div class="col-md-6">
-                <div id="" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                <div id="" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: none solid #E6E9ED">
                   <input type="date" name="custom_start"> -
                   <input type="date" name="custom_end">
                 </div>
@@ -33,7 +33,7 @@
               </div>
 
               <div class="col-md-6">
-                <div id="" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                <div id="" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border:none">
                     <select name="range">
                         <option value="">-- Pilih rentang waktu--</option>
                         <option value="7">Seminggu Terakhir</option>
@@ -49,8 +49,11 @@
           <br><br><br><br>
           <p class="text-center" style="color: red">Silahkan pilih salah satu rentangan waktu antara custom atau tersedia!</p>
           
-          <div class="text-center"> 
-            <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Cetak</button>
+          <div class="text-center">
+            <a href="{{ url("buku-tamu-cetak") }}" target="_blank">
+              <button type="submit" class="btn btn-success"> <i class="fa fa-print"></i> Unduh </button>
+            </a> 
+            
           </div>
         </div>
         </form>

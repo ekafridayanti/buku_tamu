@@ -14,7 +14,7 @@
                         <h2>Total Tamu <i class="fa fa-user"></i></h2>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="tile_count" style="margin-left: 30%" style="margin-top: 0%">
+                    <div class="tile_count" style="margin-left: 40%" style="margin-top: 0%">
                         <div class="count" style="font-size: 80px" style="margin-top: 0cm">{{ $guestTotal }}</div> 
                     </div>
                 </div>

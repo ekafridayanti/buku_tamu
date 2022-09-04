@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('institute');
+            $table->string('sector');
             $table->string('needs');
             $table->string('notlp');
             $table->text('signature');

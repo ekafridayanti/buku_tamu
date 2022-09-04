@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12 col-sm-12">
+    {{-- <div class="col-md-12 col-sm-12">
       <div class="x_panel">
         <div class="x_title">
           <h2>Data Tamu</h2>
@@ -21,62 +21,142 @@
                 
               </div>
               
-              <div id="datatable_wrapper" class="x_content dataTables_wrapper container-fluid dt-bootstrap">
-                @include('components.admin.alert-massage')
-                <table class="table table-striped dataTables_wrapper" style="overflow-x:auto; ">
-                  <thead>
-                    <tr>
-                      <th class="text-center">No</th>
-                      <th class="text-center">Tanggal</th>
-                      <th class="text-center">Nama</th>
-                      <th class="text-center">Instansi</th>
-                      <th class="text-center">Keperluan</th>
-                      <th class="text-center">No Telepon</th>
-                      <th class="text-center">TTD</th>
-                      <th class="text-center">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($guest as $g)
-                    <tr>
-                      <td>{{ $loop->iteration }}</td>
-                      <td>{{ $g->created }}</td>
-                      <td>{{ $g->name }}</td>
-                      <td>{{ $g->institute }}</td>
-                      <td style="word-break: break-all">{{ $g->needs }}</td>
-                      <td>{{ $g->notlp }}</td>
-                      <td>
-                        <img src="{{ $g->signature }}" alt="ttd" style="max-width: 100px">
-                      </td>
-                      <td>
-                        <button data-toggle="modal" data-target="#modal-view{{ $g->id }}" type="submit" class="btn btn-block btn-sm btn-success edit"><i class="fa fa-folder"></i> View</button>
-                        <button data-toggle="modal" data-target="#modal-delete{{ $g->id }}" type="submit" class="btn btn-block btn-danger btn-sm delete"><i class="fa fa-trash-o"></i> Hapus</button>
-                      </td>
-                    </tr>
-                    @endforeach  
-                  </tbody>
-                  <tfoot>
-                      <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Nama</th>
-                      <th>Instansi</th>
-                      <th>Keperluan</th>
-                      <th>No Telepon</th>
-                      <th>TTD</th>
-                      <th>Action</th>
-                     
-                  </tfoot>
-                </table>
-                <div>
-                  {{ $guest->links() }}
+              <div id="datatable_wrapper" class="x_content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card-box table-responsive">
+                      @include('components.admin.alert-massage')
+                      <table id="datatable" class="table table-striped table-bordered" style="overflow-x:auto; table-layout: fixed; width:100%">
+                        <thead>
+                          <tr>
+                            <th class="text-center" style="width: 35px">No</th>
+                            <th class="text-center">Tanggal</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Instansi</th>
+                            <th class="text-center">Keperluan</th>
+                            <th class="text-center">Telepon</th>
+                            <th class="text-center">TTD</th>
+                            <th class="text-center">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($guest as $g)
+                          <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $g->created }}</td>
+                            <td>{{ $g->name }}</td>
+                            <td>{{ $g->institute }}</td>
+                            <td style=" word-wrap:break-word">{{ $g->needs }}</td>
+                            <td>{{ $g->notlp }}</td>
+                            <td>
+                              <img src="{{ $g->signature }}" alt="ttd" style="max-width: 100px">
+                            </td>
+                            <td>
+                              <button data-toggle="modal" data-target="#modal-view{{ $g->id }}" type="submit" class="btn btn-block btn-sm btn-success edit"><i class="fa fa-folder"></i> View</button>
+                              <button data-toggle="modal" data-target="#modal-delete{{ $g->id }}" type="submit" class="btn btn-block btn-danger btn-sm delete"><i class="fa fa-trash-o"></i> Hapus</button>
+                            </td>
+                          </tr>
+                          @endforeach  
+                        </tbody>
+                        <tfoot>
+                            <th class="text-center">No</th>
+                            <th class="text-center">Tanggal</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Instansi</th>
+                            <th class="text-center">Keperluan</th>
+                            <th class="text-center">Telepon</th>
+                            <th class="text-center">TTD</th>
+                            <th class="text-center">Action</th>
+                          
+                        </tfoot>
+                      </table>
+                      <div>
+                        {{ $guest->links() }}
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div> --}}
+
+    <div class="col-md-12 col-sm-12 ">
+      <div class="x_panel">
+        <div class="x_title">
+          <a href="{{ route("guest.add") }}">
+            <button type="button" class="btn btn-primary">Tambah Tamu</button>
+          </a>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="card-box table-responsive">                   
+                    @include('components.admin.alert-massage')
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th class="text-center" style="width: 35px">No</th>
+                          <th class="text-center">Tanggal</th>
+                          <th class="text-center">Nama</th>
+                          <th class="text-center">Bidang yang Dituju</th>
+                          <th class="text-center">Unit Kerja/Instansi</th>
+                          <th class="text-center" style="width: 250px">Keperluan</th>
+                          <th class="text-center">Telepon</th>
+                          <th class="text-center">TTD</th>
+                          <th class="text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($guest as $g)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{\Carbon\Carbon::parse($g->created)->translatedFormat('d-m-Y H:i:s')}}</td>
+                          <td>{{ $g->name }}</td>
+                          <td>{{ $g->sector }}</td>
+                          <td>{{ $g->institute }}</td>
+                          <td style=" word-wrap:break-word">{{ $g->needs }}</td>
+                          <td>{{ $g->notlp }}</td>
+                          <td>
+                            <img src="{{ $g->signature }}" alt="ttd" style="max-width: 100px">
+                          </td>
+                          <td>
+                            <ul class="list-inline display-layout">
+                              <li>
+                                <button data-toggle="modal" data-target="#modal-view{{ $g->id }}" type="submit" class="btn btn-block btn-success edit btn-xs"><i class="fa fa-folder"></i></button>
+
+                              </li>
+                              <li>
+                                <button data-toggle="modal" data-target="#modal-delete{{ $g->id }}" type="submit" class="btn btn-block btn-danger btn-xs delete"><i class="fa fa-trash-o"></i></button>
+                              </li>
+                            </ul>  
+                          </td>
+                        </tr>
+                        @endforeach  
+                      </tbody>
+                      <tfoot>
+                          <th class="text-center">No</th>
+                          <th class="text-center">Tanggal</th>
+                          <th class="text-center">Nama</th>
+                          <th class="text-center">Bidang yang Dituju</th>
+                          <th class="text-center">Unit Kerja/Instansi</th>                         
+                          <th class="text-center">Keperluan</th>
+                          <th class="text-center">Telepon</th>
+                          <th class="text-center">TTD</th>
+                          <th class="text-center">Action</th>                       
+                      </tfoot>
+                    </table>                    
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
-  </div>
+</div>
 
   {{-- CREATE GUEST BOOK --}}
         <!-- modals -->
@@ -154,17 +234,19 @@
             <label>Nama</label>
             <input type="text" value="{{ $g->name }}" class="form-control" readonly>
           </div>
-
           <div class="form-group">
-            <label>Instansi</label>
+            <label>Bidang yang Dituju</label>
+            <input type="text" name="sector{{ $g->id }}" value="{{ $g->sector}}" class="form-control" readonly>
+          </div>
+          <div class="form-group">
+            <label>Unit Kerja/Instansi</label>
             <input type="text" name="institute{{ $g->id }}" value="{{ $g->institute}}" class="form-control" readonly>
           </div>
-
           <div class="form-group">
             <label>Keperluan</label>
-            <input type="text" name="needs{{ $g->id }}" value="{{ $g->needs }}" class="form-control" readonly>
+            <textarea name="needs{{ $g->id }}" value="{{ $g->needs }}" id="needs" cols="30" rows="10" class="form-control" readonly></textarea>
+            
           </div>
-
           <div class="form-group">
             <label>No Telepon</label>
             <input type="text" name="needs{{ $g->id }}" value="{{ $g->notlp }}" class="form-control" readonly>

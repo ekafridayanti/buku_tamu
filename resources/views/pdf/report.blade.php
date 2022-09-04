@@ -9,10 +9,10 @@
             
             border: 1px solid black;
             border-collapse: collapse;
-            
+            width: 100%
         }
         th, td{
-            padding: 5px;
+            padding: 8px;
         }
     </style>
     <title>{{ $range  }}</title>
@@ -20,33 +20,35 @@
 <body>
     <center>
         <h2 class="text-center">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kota Denpasar</h2>
+        {{-- <hr /> --}}
         <h3>BUKU TAMU</h3>
     </center>
  
-    Rentang waktu: {{ $range }}
+    {{ $range }}
     <br><br>
-    <table style="
-        text-align: left;">
+    <table style="text-align: left;" class="text-center">
         <thead>
             <tr>
-                <th>No</th>
+                <th style="width: 25px;">No</th>
+                <th style="width:80px;">Tanggal</th>
                 <th>Nama Tamu</th>
-                <th>Instansi</th>
-                <th>Keperluan</th>
-                <th>No Telp</th>
-                <th>Tanggal</th>
+                <th>Bidang</th>
+                <th>Unit Kerja/Instansi</th>
+                <th style="width:250px;">Keperluan</th>
+                <th>No Telepon</th>  
                 <th>Tanda Tangan</th>
             </tr>
         </thead>
         <tbody>
             @foreach($data as $x)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <td style="text-align: center">{{ $loop->iteration }}</td>
+                    <td>{{\Carbon\Carbon::parse($x->created)->translatedFormat('d-m-Y H:i:s')}}</td>
                     <td>{{ $x->name }}</td>
+                    <td>{{ $x->sector }}</td>
                     <td>{{ $x->institute  }}</td>
                     <td>{{ $x->needs }}</td>
-                    <td>{{ $x->notlp  }}</td>
-                    <td>{{ $x->created  }}</td>
+                    <td>{{ $x->notlp  }}</td>                   
                     <td>
                         <img src="{{ $x->signature }}" alt="ttd" style="max-width: 100px">
                     </td>

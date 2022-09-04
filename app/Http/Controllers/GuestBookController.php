@@ -19,18 +19,36 @@ class GuestBookController extends Controller
     {
         $request->validate([
             'name' => "required",
+            'sector'=> "required",
             'institute' => "required",
-            'needs' => "required",
             'notlp' => "required",
             'signature' => "required",
         ],[
-            'signature.required'=>'Tanda tangan tidak boleh kosong!']);
+            'signature.required'=>'Tanda tangan tidak boleh kosong',
+            
+            ]);
 
+        
+
+        $needs=$request->needs1;
+        if ($needs=='another') {
+            $needs=$request->needs2;
+            if (empty($needs)) {
+                return redirect()->back()->withErrors(['massage'=>'Masukkan Keperluan Anda pada Area Kolom!'])->withInput($request->input()) ;
+
+            }
+        } 
+        
+        if (!empty($request->needs1)&& !empty($request->needs2)&& ($request->needs1!='another')) {
+            $needs = $request->needs1." ".$request->needs2;
+        }
+        
         DB::table('guest_books')
             ->insert([
                 'name'=> $request->name,
                 'institute'=> $request->institute,
-                'needs'=> $request->needs,
+                'sector'=> $request->sector,
+                'needs'=> $needs,
                 'notlp'=> $request->notlp,
                 'signature'=> $request->signature,
                 'created'=> Carbon::now()
@@ -70,7 +88,7 @@ class GuestBookController extends Controller
             'custom_start' => ['nullable', 'date', 'required_without:range', 'required_with:custom_end'],
             'custom_end' => ['nullable', 'date', 'required_without:range', 'required_with:custom_start', 'after_or_equal:custom_start'],
             'range' => ['nullable', 'numeric', 'required_without:custom_start,custom_end']
-        ]);
+        ],);
 
         if (empty($request->range)) {
             $startDate = strtotime($request->custom_start);
@@ -120,8 +138,16 @@ class GuestBookController extends Controller
             'data' => $x,
             'range' => $dateRange,
         ];
-
         $pdf = PDF::loadView('pdf.report', $data);
-        return $pdf->stream('reports.pdf');
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->download('report.pdf');
+        
     }
+    // public function download_pdf()
+    // {
+    //     $pdf = PDF::loadView('pdf.report', $data);
+    //     $pdf->setPaper('A4', 'landscape');
+    //     return $pdf->stream('report.pdf');
+    // }
+    
 }

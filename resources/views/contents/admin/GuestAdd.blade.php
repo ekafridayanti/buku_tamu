@@ -21,7 +21,7 @@
                 <form action= {{ route("guest.create") }} method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Tanggal <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Tanggal <span class="required" style="color: red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
                             <input name="date" id="datetime-picker" type="text" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy" value="{{ $currentTime  }}" readonly/>
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama <span class="required" style="color: red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
                             <input type="text" name="name" id="name" required="required" class="form-control " value="{{ old ('name') }}">
@@ -38,26 +38,103 @@
                     </div>
 
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Instansi <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Instansi <span class="required" style="color: red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
                             <input type="text" id="institute" name="institute" required="required" class="form-control" value="{{ old ('institute') }}">
                         </div>
                     </div>
                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">No Telepon</label>
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 ">
-                            <input id="notlp" class="form-control" type="text" name="notlp" value="{{ old ('notlp') }}">
+                            <select id="sector" name="sector" class="form-control" required>
+                                <option value="">-- Pilih Bidang yang Dituju --</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
+                                <option value="Mutasi dan Promosi">Mutasi dan Promosi</option>
+                                <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
+                                <option value="Pengembangan Pelayanan Informasi Publik">Pengembangan Pelayanan Informasi Publik</option>
+                                
+                            </select>
+                            {{-- <input type="text" name="sector2" id="sector2" class="form-control" placeholder="Masukkan yang dituju lainnya..."> --}}
                         </div>
                     </div>
                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan</label>
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">No Telepon <span class="required" style="color: red">*</span>
+
+                        </label>
                         <div class="col-md-6 col-sm-6 ">
-                            <textarea name="needs" id="needs" cols="30" rows="5" class="form-control" type="text" value="{{ old ('needs') }}" ></textarea>
+                            <input id="notlp" class="form-control" type="number" name="notlp" value="{{ old ('notlp') }}">
                         </div>
                     </div>
+                    {{-- <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <select id="needs1" name="needs1" class="form-control" required>
+                                <option value="">-- Pilih Layanan --</option>
+                                <option value="Press">Press</option>
+                                <option value="Internet">Internet</option>
+                                <option value="another">Lainnya</option>
+                              </select>
+                            <textarea name="needs2" id="needs2" cols="30" rows="5" class="form-control" type="text"  placeholder="Masukkan Keperluan Lainnya"></textarea>
+                        </div>
+                    </div> --}}
+
+
                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Tanda Tangan</label>
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <select id="needs1" name="needs1" class="form-control" required>
+                                <option value="">-- Pilih Layanan --</option>
+                                <option value="another">Lainnya</option>
+                                <option value="Layanan Pengajuan Karis / Karsu / Karpeg">Layanan Pengajuan Karis / Karsu / Karpeg</option>
+                                <option value="Layanan Update Data PNS pada Aplikasi Simpeg">Layanan Update Data PNS pada Aplikasi Simpeg</option>
+                                <option value="Layanan Cuti Sakit, Cuti Besar, Cuti di Luar Tanggungan Negara">Layanan Cuti Sakit, Cuti Besar, Cuti di Luar Tanggungan Negara</option>
+                                <option value="Layanan Permohonan Ijin Perceraian">Layanan Permohonan Ijin Perceraian</option>
+                                <option value="Layanan Pembinaan Disiplin PNS">Layanan Pembinaan Disiplin PNS</option>
+                                <option value="layanan Pemberian Tanda Penghargaan Satyalancana Karya Satya yang sudah mengabdi selama X, XX, dan XXX Tahun">layanan Pemberian Tanda Penghargaan Satyalancana Karya Satya yang sudah mengabdi selama X, XX, dan XXX Tahun</option>
+                                <option value="Layanan Perbaikan Data Pada Aplikasi E-Kinerja">Layanan Perbaikan Data Pada Aplikasi E-Kinerja</option>
+                                <option value="Layanan Perbaikan Daftar Kegiatan Pada Aplikasi E-Kinerja">Layanan Perbaikan Daftar Kegiatan Pada Aplikasi E-Kinerja</option>
+                                <option value="Layanan Penilaian Prestasi Kerja PNS">Layanan Penilaian Prestasi Kerja PNS</option>
+                                <option value="Layanan Permohonan Ijin Belajar">Layanan Permohonan Ijin Belajar</option>
+                                <option value="Layanan Permohonan Tugas Belajar">Layanan Permohonan Tugas Belajar</option>
+                                <option value="Layanan Pengiriman Pegawai dalam Diklat, Bimtek/Workshop, Sosialisasi/Pembekalan Teknis/Fungsional">Layanan Pengiriman Pegawai dalam Diklat, Bimtek/Workshop, Sosialisasi/Pembekalan Teknis/Fungsional</option>
+                                <option value="Layanan Pembekalan dan Ujian Sertifikasi Pengadaan Barang/Jasa Pemerintah">Layanan Pembekalan dan Ujian Sertifikasi Pengadaan Barang/Jasa Pemerintah</option>
+                                <option value="Layanan Penyelenggaraan Diklat Teknik/Fungsional">Layanan Penyelenggaraan Diklat Teknik/Fungsional</option>
+                                <option value="Layanan Diklat Kepemimpinan Tk II,III, dan IV Pola Kontribusi">Layanan Diklat Kepemimpinan Tk II,III, dan IV Pola Kontribusi</option>
+                                <option value="Layanan Diklat Prajabatan Calon PNS Gol. I, II, dan III yang diangkat dari Tenaga Honorer Kategori 1, dan atau Kategori 2 dan Latihan Dasar CPNS dengan pola Kontribusi">Layanan Diklat Prajabatan Calon PNS Gol. I, II, dan III yang diangkat dari Tenaga Honorer Kategori 1, dan atau Kategori 2 dan Latihan Dasar CPNS dengan pola Kontribusi</option>
+                                <option value="Layanan Pelaksanaan Pemetaan Penilaian Kompetensi">Layanan Pelaksanaan Pemetaan Penilaian Kompetensi</option>
+                                <option value="Layanan Kenaikan Gaji Berkala Pimpinan OPD">Layanan Kenaikan Gaji Berkala Pimpinan OPD</option>
+                                <option value="Layanan Kenaikan Pangkat Gol III/d Kebawah">Layanan Kenaikan Pangkat Gol III/d Kebawah</option>
+                                <option value="Layanan Kenaikan Pangkat Golongan IV/c Keatas">Layanan Kenaikan Pangkat Golongan IV/c Keatas</option>
+                                <option value="Layanan Kenaikan Pangkat Golongan IV/a dan IV/b">Layanan Kenaikan Pangkat Golongan IV/a dan IV/b</option>
+                                <option value="Layanan Seleksi Penerimaan CPNS">Layanan Seleksi Penerimaan CPNS</option>
+                                <option value="Layanan Penyusunan Daftar Nominatif Kenaikan Pangkat">Layanan Penyusunan Daftar Nominatif Kenaikan Pangkat</option>
+                                <option value="Layanan Prosedur Ujian Kenaikan Pangkat Penyesuaian Ijasah">Layanan Prosedur Ujian Kenaikan Pangkat Penyesuaian Ijasah</option>
+                                <option value="Layanan Pengangkatan Jabatan Fungsional">Layanan Pengangkatan Jabatan Fungsional</option>
+                                <option value="Layanan Masa Persiapan Pensiun (MPP)">Layanan Masa Persiapan Pensiun (MPP)</option>
+                                <option value="Layanan Pelayanan Pensiun Janda/Duda">Layanan Pelayanan Pensiun Janda/Duda</option>
+                                <option value="Layanan Pelayanan Pensiun Non BUP">Layanan Pelayanan Pensiun Non BUP</option>
+                                <option value="Layanan Prosedur Perpindahan PNS (Keluar)">Layanan Prosedur Perpindahan PNS (Keluar)</option>
+                                <option value="Layanan Prosedur Perpindahan PNS (Masuk)">Layanan Prosedur Perpindahan PNS (Masuk)</option>
+                                <option value="Layanan RESPON">Layanan RESPON</option>
+                                <option value="Layanan Konseling Online">Layanan Konseling Online</option>
+                                <option value="Layanan Pengajuan Cuti Online">Layanan Pengajuan Cuti Online</option>
+                                <option value="Layanan LHKPN">Layanan LHKPN</option>
+                                <option value="Layanan Pengantaran Surat"></option>
+                            </select>
+                            <textarea class="form-control" name="needs2" id="needs2" cols="30" rows="5"  placeholder="Masukkan Keperluan Lainnya, jika tidak ada bisa diisi: - "></textarea> 
+                        </div>
+                      </div>
+
+
+                    <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Tanda Tangan/Paraf <span class="required" style="color: red">*</span>
+
+                        </label>
                         <div class="col-md-6 col-sm-6">
                             <div id="sig"></div>
                             <br><br>
