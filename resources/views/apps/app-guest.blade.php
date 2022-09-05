@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
     <style>
-        .kbw-signature {
-            width: 100%;
-            height: 200px;
-        }
+        .kbw-signature { width: 100%; height: 200px;}
+      #sig canvas{ width: 100% !important; height: auto;}
     </style>
     {{-- STYLE TEMPLATE --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
