@@ -9,7 +9,7 @@
     {{-- SCRIPT SIGNATURE --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
-    <script src="{{ asset('template/production/js/touch') }}/jquery.ui.touch-punch.min.js"></script>
+    
     <style>
         .kbw-signature { width: 100%; height: 200px;}
       #sig canvas{ width: 100% !important; height: auto;}
@@ -132,7 +132,7 @@
           
       });
     </script>
-    <script>$('#widget').draggable();</script>
+    <script  src="{{ asset('template/tamplate-guest') }}/js/signature-pad.min.js"></script>
     <!-- DATE-PICKER -->
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.js"></script>
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.en.js"></script>
