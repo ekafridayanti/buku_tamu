@@ -34,17 +34,17 @@
         </div>
         <div class="row">
           <div class="col-md-12 form-group">
-            <label for="notlp" class="col-form-label">Bidang <span class="required" style="color: red">*</span>
+            <label for="notlp" class="col-form-label">Yang dituju <span class="required" style="color: red">*</span>
             </label>
             <select name="sector" id="sector" class="form-control" required >
-              <option value="">-- Pilih Bidang Yang dituju --</option>
-              <option value="Umum">Umum</option>
-              <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
-              <option value="Mutasi dan Promosi">Mutasi dan Promosi</option>
-              <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
-              <option value="Pengembangan Pelayanan Informasi Publik">Pengembangan Pelayanan Informasi Publik</option>
+              <option value="">-- Pilih yang dituju --</option>
+              <option value="Bagian Umum">Bagian Umum dan Kepegawaian</option>
+              <option value="Bagian Keuangan">Bagian Keuangan</option>
+              <option value="Bidang Pengembangan Kompetensi Aparatur">Bidang Pengembangan Kompetensi Aparatur</option>
+              <option value="Bidang Penilaian Kinerja dan Penghargaan Aparatur">Bidang Penilaian Kinerja dan Penghargaan Aparatur</option>
+              <option value="Bidang Pengadaan, Pemberhentian dan Informasi">Bidang Pengadaan, Pemberhentian dan Informasi</option>
+              <option value="Bidang Mutasi dan Promosi">Bidang Mutasi dan Promosi</option>
               
-
             </select>
           </div>
         </div>

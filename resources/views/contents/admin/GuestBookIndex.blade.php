@@ -103,7 +103,7 @@
                           <th class="text-center" style="width: 35px">No</th>
                           <th class="text-center">Tanggal</th>
                           <th class="text-center">Nama</th>
-                          <th class="text-center">Bidang yang Dituju</th>
+                          <th class="text-center">Yang dituju</th>
                           <th class="text-center">Unit Kerja/Instansi</th>
                           <th class="text-center" style="width: 250px">Keperluan</th>
                           <th class="text-center">Telepon</th>
@@ -142,7 +142,7 @@
                           <th class="text-center">No</th>
                           <th class="text-center">Tanggal</th>
                           <th class="text-center">Nama</th>
-                          <th class="text-center">Bidang yang Dituju</th>
+                          <th class="text-center">Yang Dituju</th>
                           <th class="text-center">Unit Kerja/Instansi</th>                         
                           <th class="text-center">Keperluan</th>
                           <th class="text-center">Telepon</th>
@@ -235,7 +235,7 @@
             <input type="text" value="{{ $g->name }}" class="form-control" readonly>
           </div>
           <div class="form-group">
-            <label>Bidang yang Dituju</label>
+            <label>Yang dituju</label>
             <input type="text" name="sector{{ $g->id }}" value="{{ $g->sector}}" class="form-control" readonly>
           </div>
           <div class="form-group">
@@ -244,8 +244,8 @@
           </div>
           <div class="form-group">
             <label>Keperluan</label>
-            <textarea name="needs{{ $g->id }}" value="{{ $g->needs }}" id="needs" cols="30" rows="10" class="form-control" readonly></textarea>
-            
+            {{-- <textarea name="needs{{ $g->id }}" value="{{ $g->needs }}" id="needs" cols="30" rows="10" class="form-control" readonly></textarea> --}}
+            <input type="text" name="needs{{ $g->id }}" value="{{ $g->needs }}" id="needs" class="form-control" readonly>
           </div>
           <div class="form-group">
             <label>No Telepon</label>

@@ -4,7 +4,7 @@
 
 @extends('apps.app-admin')
 
-@section('title', 'Tambah Data Tamu')
+@section('title', 'Buku Tamu')
 
 @section('content')
 
@@ -38,24 +38,24 @@
                     </div>
 
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Instansi <span class="required" style="color: red">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Unit Kerja/Instansi <span class="required" style="color: red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
                             <input type="text" id="institute" name="institute" required="required" class="form-control" value="{{ old ('institute') }}">
                         </div>
                     </div>
                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Yang dituju <span class="required" style="color: red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
                             <select id="sector" name="sector" class="form-control" required>
-                                <option value="">-- Pilih Bidang yang Dituju --</option>
-                                <option value="Umum">Umum</option>
-                                <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
-                                <option value="Mutasi dan Promosi">Mutasi dan Promosi</option>
-                                <option value="Pengembangan Kinerja Aparatur">Pengembangan Kinerja Aparatur</option>
-                                <option value="Pengembangan Pelayanan Informasi Publik">Pengembangan Pelayanan Informasi Publik</option>
-                                
+                                <option value="">-- Pilih yang dituju --</option>
+                                <option value="Bagian Umum">Bagian Umum dan Kepegawaian</option>
+                                <option value="Bagian Keuangan">Bagian Keuangan</option>
+                                <option value="Bidang Pengembangan Kompetensi Aparatur">Bidang Pengembangan Kompetensi Aparatur</option>
+                                <option value="Bidang Penilaian Kinerja dan Penghargaan Aparatur">Bidang Penilaian Kinerja dan Penghargaan Aparatur</option>
+                                <option value="Bidang Pengadaan, Pemberhentian dan Informasi">Bidang Pengadaan, Pemberhentian dan Informasi</option>
+                                <option value="Bidang Mutasi dan Promosi">Bidang Mutasi dan Promosi</option>                              
                             </select>
                             {{-- <input type="text" name="sector2" id="sector2" class="form-control" placeholder="Masukkan yang dituju lainnya..."> --}}
                         </div>
@@ -126,7 +126,7 @@
                                 <option value="Layanan LHKPN">Layanan LHKPN</option>
                                 <option value="Layanan Pengantaran Surat"></option>
                             </select>
-                            <textarea class="form-control" name="needs2" id="needs2" cols="30" rows="5"  placeholder="Masukkan Keperluan Lainnya, jika tidak ada bisa diisi: - "></textarea> 
+                            <textarea class="form-control" name="needs2" id="needs2" cols="30" rows="5"  placeholder="Masukkan Keperluan Lainnya.."></textarea> 
                         </div>
                       </div>
 
