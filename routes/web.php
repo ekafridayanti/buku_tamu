@@ -8,7 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('app-guest');
+    return view('welcome');
 });
 Route::get('/success', function () {
     return view('contents.guest.GuestSuccess');
