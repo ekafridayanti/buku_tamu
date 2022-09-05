@@ -1,6 +1,0 @@
-<IfModule mod_security.c>
-SecRuleEngine Off
-SecFilterInheritance Off
-SecFilterEngine Off
-SecFilterScanPOST Off
-</IfModule>
