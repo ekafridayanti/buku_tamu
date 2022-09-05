@@ -126,6 +126,10 @@
     <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
     <script type="text/javascript">
       var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
+      can.addEventListener( 'touchstart', onTouchStart, false);
+      function onTouchStart(e) {
+        ctx.fillRect(0,0,300,300);      
+        }
       $('#clear').click(function (e) {
           e.preventDefault();
           sig.signature('clear');
