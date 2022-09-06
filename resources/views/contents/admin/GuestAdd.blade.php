@@ -50,7 +50,7 @@
                         <div class="col-md-6 col-sm-6 ">
                             <select id="sector" name="sector" class="form-control" required>
                                 <option value="">-- Pilih yang dituju --</option>
-                                <option value="Bagian Umum">Bagian Umum dan Kepegawaian</option>
+                                <option value="Bagian Umum dan Kepegawaian">Bagian Umum dan Kepegawaian</option>
                                 <option value="Bagian Keuangan">Bagian Keuangan</option>
                                 <option value="Bidang Pengembangan Kompetensi Aparatur">Bidang Pengembangan Kompetensi Aparatur</option>
                                 <option value="Bidang Penilaian Kinerja dan Penghargaan Aparatur">Bidang Penilaian Kinerja dan Penghargaan Aparatur</option>
