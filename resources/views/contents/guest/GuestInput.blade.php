@@ -113,7 +113,7 @@
             <br><br>
             <button id="clear" class="btn btn-danger">Clear Signature</button>
             <button id="save" class="btn btn-success">Save</button>
-            <textarea id="signature-pad" name="signature" class="widget" style="display: none"></textarea>
+            <textarea id="signature" name="signature" class="widget" style="display: none"></textarea>
           </div>
         </div>
         {{-- <div class="row">
