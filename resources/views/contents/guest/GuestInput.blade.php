@@ -111,9 +111,12 @@
             <br/>
             <div id="sig"></div>
             <br><br>
+            <div class="form-control" style="border: 5px">
+              <textarea id="signature" name="signature" style="display: none;"></textarea>
+            </div>
             <button id="clear" class="btn btn-danger">Clear Signature</button>
             <button id="save" class="btn btn-success">Save</button>
-            <textarea id="signature" name="signature" style="display: none"></textarea>
+            
           </div>
         </div>
         {{-- <div class="row">
