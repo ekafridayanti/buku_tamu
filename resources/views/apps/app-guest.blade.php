@@ -132,7 +132,7 @@
           
       });
     </script>
-    <script  src="{{ asset('template/tamplate-guest') }}/js/signature-pad.min.js"></script>
+    {{-- <script  src="{{ asset('template/tamplate-guest') }}/js/signature-pad.min.js"></script> --}}
     <!-- DATE-PICKER -->
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.js"></script>
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.en.js"></script>
