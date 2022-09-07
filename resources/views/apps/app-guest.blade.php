@@ -14,7 +14,7 @@
         .kbw-signature { width: 100%; height: 200px;}
       #sig canvas{ width: 100% !important; height: auto;}
     </style>
-    
+
     {{-- STYLE TEMPLATE --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('template/tamplate-guest') }}/fonts/icomoon/style.css">
@@ -123,7 +123,7 @@
     <script src="{{ asset('template/tamplate-guest') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('template/tamplate-guest') }}/js/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+    <script type="text/javascript" src="{{  asset('template/tamplate-guest')  }}/js/jquery.signature.js"></script>
     <script type="text/javascript">
       var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
       $('#clear').click(function (e) {
