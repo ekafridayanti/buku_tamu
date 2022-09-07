@@ -14,6 +14,7 @@
         .kbw-signature { width: 100%; height: 200px;}
       #sig canvas{ width: 100% !important; height: auto;}
     </style>
+    
     {{-- STYLE TEMPLATE --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('template/tamplate-guest') }}/fonts/icomoon/style.css">
