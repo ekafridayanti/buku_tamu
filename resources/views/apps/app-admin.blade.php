@@ -8,11 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('template/production') }}/images/Logo BKPSDM.png" type="image/icon type">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/tamplate-guest') }}/css/jquery.signature.css">
+    
     <style>
-      .kbw-signature { width: 100%; height: 200px;}
+        .kbw-signature { width: 100%; height: 200px;}
       #sig canvas{ width: 100% !important; height: auto;}
     </style>
+    <!-- STYLE SIGNATURE PAD NEW -->
+    {{-- <link rel="stylesheet" href="{{ asset('template/tamplate-guest/signature-pad-main') }}/styles.css">
+    <link rel="stylesheet" href="{{ asset('template/tamplate-guest/signature-pad-main') }}/css/signature-pad.css"> --}}
 
     <title>BKPSDM Denpasar | @yield('title') </title>
 
@@ -90,7 +95,7 @@
     <script src="{{ asset('template') }}/build/js/custom.min.js"></script>
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+    <script type="text/javascript" src="{{  asset('template/tamplate-guest')  }}/js/jquery.signature.js"></script>
     <script type="text/javascript">
         var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
         $('#clear').click(function(e) {

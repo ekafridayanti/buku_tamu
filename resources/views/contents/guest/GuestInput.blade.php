@@ -5,7 +5,8 @@
 @extends('apps.app-guest')
 
 @section('content-1')
-<div class="col-md-6">
+
+<div class="col-md-6"> 
     <div class="box">
       <img class="text-center" style="max-width: 90%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021.png') }}" alt="">
       <br><br>
@@ -14,11 +15,11 @@
         @csrf
         @include('components.alert-massage')
         <div class="row">
-          <div class="col-md-12 form-group">
+          <div class="col-md-12 form-group" >
             <label for="date" class="col-form-label">Tanggal <span class="required" style="color: red">*</span>
             </label>
             <input name="date" id="datetime-picker" type="text" class='form-control readonly'  id="dp" placeholder="Tanggal" data-date-format="dd M yyyy" value="{{ $currentTime  }}" readonly/>
-            <i class="fa-calendar-o" required='required'></i>
+            <i class="fa-calendar-o" required='required' style=" word-wrap:break-word"></i>
           </div>
        </div>
         <div class="row">
@@ -109,22 +110,24 @@
             <label class="col-form-label" for="">Tanda Tangan <span class="required" style="color: red">*</span>
             </label>
             <br/>
-            <div id="sig"></div>
-            <br><br>
-            <div class="form-control" style="border: 5px">
-              <textarea id="signature" name="signature" style="display: none;"></textarea>
+            <div id="signature-pad" class="signature-pad">
+              <div class="signature-pad--body" style="">
+                <canvas style="display: block;
+                position: relative;
+                border: 1px solid; "></canvas>
+              </div>             
             </div>
+            <input type="hidden" id="signature-base64" name="signature">
+            <br>
+            <button id="clearButton" class="btn btn-danger">Clear Signature</button>
+            <button id="save" class="btn btn-success">Save</button>
+            {{-- <div id="sig"></div>
+            <br><br>
             <button id="clear" class="btn btn-danger">Clear Signature</button>
             <button id="save" class="btn btn-success">Save</button>
-            
+            <textarea id="signature" name="signature" class="widget" style="display: none"></textarea> --}}
           </div>
         </div>
-        {{-- <div class="row">
-          <div class="col-md-6">
-            <input type="submit" value="Send Message" class="btn btn-block btn-primary rounded-0 py-2 px-4">
-
-          </div>
-        </div> --}}
       </form>
    </div>
   </div>

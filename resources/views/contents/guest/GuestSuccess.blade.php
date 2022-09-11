@@ -1,7 +1,7 @@
 @extends('apps.app-guest')
 @section('content-1')
 <div class="col-md-6">
-              
+            
   <div class="box text-center">
     <img class="text-center" style="max-width: 100%" src="{{ asset('template/production/images/Logo Atas BKPSDM 2021.png') }}" alt="">
     <br><br>

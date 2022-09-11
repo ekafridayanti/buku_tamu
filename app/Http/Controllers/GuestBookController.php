@@ -140,7 +140,7 @@ class GuestBookController extends Controller
         ];
         $pdf = PDF::loadView('pdf.report', $data);
         $pdf->setPaper('A4', 'landscape');
-        return $pdf->download('report.pdf');
+        return $pdf->download('report-buku-tamu-BKPSDM.pdf');
         
     }
     // public function download_pdf()

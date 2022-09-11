@@ -8,13 +8,20 @@
    <link rel="icon" href="{{ asset('template/production') }}/images/Logo BKPSDM.png" type="image/icon type">
     {{-- SCRIPT SIGNATURE --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
-    
-    <style>
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('template/tamplate-guest') }}/css/jquery.signature.css"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/tamplate-guest/signature-pad-main') }}/css/jquery.signature.css">
+
+    {{-- <style>
         .kbw-signature { width: 100%; height: 200px;}
       #sig canvas{ width: 100% !important; height: auto;}
-    </style>
-
+    </style> --}}
+    <!-- STYLE SIGNATURE PAD NEW -->
+    {{-- <link rel="stylesheet" href="{{ asset('template/tamplate-guest/signature-pad-main') }}/styles.css"> --}}
+    
+    <style>
+      .signature-pad { width: 100%; height: 200px; }
+    #canvas{ width: 100% !important; height: auto;}
+  </style>
     {{-- STYLE TEMPLATE --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('template/tamplate-guest') }}/fonts/icomoon/style.css">
@@ -27,8 +34,8 @@
 		<link rel="stylesheet" href="{{ asset('template/tamplate-guest') }}/vendor/date-picker/css/datepicker.min.css">
 </head>
 <body>
-    <div class="content">
-        <div class="container">
+    <div class="content">  
+        <div class="container">         
           <div class="row">
             @yield('content-1')
             {{-- <div class="col-md-6">
@@ -84,10 +91,9 @@
                 </form>
              </div>
             </div> --}}
-            <br><br>
-
+            
             <div class="col-md-5 mr-auto">
-              <br>
+              <br>            
               <h3 class="mb-3">Informasi Contact</h3>
               <p>Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kota Denpasar</p>
               <ul>
@@ -123,8 +129,8 @@
     <script src="{{ asset('template/tamplate-guest') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('template/tamplate-guest') }}/js/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{  asset('template/tamplate-guest')  }}/js/jquery.signature.js"></script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript" src="{{  asset('template/tamplate-guest')  }}/js/jquery.signature.js"></script> --}}
+    {{-- <script type="text/javascript">
       var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
       $('#clear').click(function (e) {
           e.preventDefault();
@@ -132,8 +138,12 @@
           $("#signature64").val('');
           
       });
-    </script>
+    </script> --}}
     {{-- <script  src="{{ asset('template/tamplate-guest') }}/js/signature-pad.min.js"></script> --}}
+    <!-- SIGNATURE PADA NEW -->
+    <script src="{{ asset('template/tamplate-guest/signature-pad-main') }}/js/signature_pad.umd.js"></script>
+    <script src="{{ asset('template/tamplate-guest/signature-pad-main') }}/js/app.js"></script>
+
     <!-- DATE-PICKER -->
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.js"></script>
     <script src="{{ asset('template/tamplate-guest') }}/vendor/date-picker/js/datepicker.en.js"></script>
