@@ -136,14 +136,25 @@
 
                         </label>
                         <div class="col-md-6 col-sm-6">
-                            <div id="sig"></div>
+                            <div id="signature-pad" class="signature-pad">
+                                <div class="signature-pad--body" style="">
+                                    <canvas style="display: block;
+                                    position: relative;
+                                    border: 1px solid; "></canvas>
+                                </div>             
+                            </div>
+                            <input type="hidden" id="signature-base64" name="signature">
+                            <br>
+                            <button id="clearButton" class="btn btn-danger">Clear Signature</button>
+                            <button id="save" class="btn btn-success">Save</button>
+                            {{-- <div id="sig"></div>
                             <br><br>
                             <a href="{{ route('guest.content') }}">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </a>
                             <button id="clear" class="btn btn-danger">Clear Signature</button>
                             <button type="submit" class="btn btn-success">Save</button>
-                            <textarea id="signature" name="signature" style="display: none"></textarea>
+                            <textarea id="signature" name="signature" style="display: none"></textarea> --}}
 
                         </div>
                     </div>

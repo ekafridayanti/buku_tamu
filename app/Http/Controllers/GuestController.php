@@ -31,7 +31,7 @@ class GuestController extends Controller
         if ($needs=='another') {
             $needs=$request->needs2;
             if (empty($needs)) {
-                return redirect()->back()->withErrors(['massage'=>'Masukkan Keperluan Anda pada Area Kolom!'])->withInput($request->input()) ;
+                return redirect()->back()->withErrors(['massage'=>'Masukkan Keperluan Lainnya pada Area Kolom!'])->withInput($request->input()) ;
 
             }
         } 
