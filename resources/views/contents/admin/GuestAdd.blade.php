@@ -145,6 +145,9 @@
                             </div>
                             <input type="hidden" id="signature-base64" name="signature">
                             <br>
+                            <a href="{{ route('guest.content') }}">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </a>
                             <button id="clearButton" class="btn btn-danger">Clear Signature</button>
                             <button id="save" class="btn btn-success">Save</button>
                             {{-- <div id="sig"></div>
