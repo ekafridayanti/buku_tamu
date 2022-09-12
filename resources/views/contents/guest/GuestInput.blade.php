@@ -30,7 +30,7 @@
           </div>
           <div class="col-md-6 form-group">
             <label for="institute" class="col-form-label">Unit Kerja/Instansi <span class="required" style="color: red">*</span></label>
-            <input type="text" class="form-control" name="institute" value="{{ old ('institute') }}" id="institute" placeholder="Instansi Anda" required='required'>
+            <input type="text" class="form-control" name="institute" value="{{ old ('institute') }}" id="institute" placeholder="UnitKerja/Instansi Anda" required='required'>
           </div>
         </div>
         <div class="row">
