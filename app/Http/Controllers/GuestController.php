@@ -24,6 +24,10 @@ class GuestController extends Controller
             'sector'=>"required",
             'signature' => "required",
         ],[
+            'name.required'=> 'Nama Tidak Boleh Kosong',
+            'institute.required'=> 'Unit Kerja/Instansi Tidak Boleh Kosong',
+            'notlp.required'=> 'Nomor Telepon Tidak Boleh Kosong',
+            'sector.required'=> 'Yang Dituji Tidak Boleh Kosong',
             'signature.required'=>'Tanda tangan tidak boleh kosong',
             
             ]);

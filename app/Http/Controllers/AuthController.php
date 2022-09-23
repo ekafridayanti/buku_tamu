@@ -15,9 +15,12 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-                            'username' => ['required'],
-                            'password' => ['required']
-                        ]);
+                            'username' => "required",
+                            'password' => "required",
+        ],
+        ['username.required'=> 'Username yang Anda masukkan salah!',
+         'password.required'=> 'Password yang Anda masukkan salah!',
+        ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();

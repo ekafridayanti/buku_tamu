@@ -31,9 +31,11 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
+            @include('components.alert-massage')
             <form action="{{ route('auth.attempt') }}" method="POST">
               @csrf
               <h1>Login Form</h1>
+              
               <div>
                 <input name="username" type="text" class="form-control" placeholder="Username" required="" />
               </div>

@@ -10,7 +10,7 @@ class GuestBookController extends Controller
 {
     public function index()
     {
-        $guest = DB::table('guest_books')->paginate(25);
+        $guest = DB::table('guest_books')->paginate(5000);
         $data = ['guest'=>$guest];
         return view('contents.admin.GuestBookIndex', $data);
     }
