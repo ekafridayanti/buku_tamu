@@ -9,8 +9,8 @@ const signaturePad = new SignaturePad(canvas, {
 
 // make it save to hidden input field  with id = 'signature-blob'
 signaturePad.addEventListener("endStroke", function(){
-  let data = signaturePad.toDataURL();
-  document.getElementById('signature-base64').value = data;
+  let base64 = signaturePad.toDataURL();
+  document.getElementById('signature-base64').value = base64;
 });
 
 // Adjust canvas coordinate space taking into account pixel ratio,

@@ -1,10 +1,13 @@
 @php
-    $currentTime = Carbon\Carbon::now()->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y h:i a');
+    $currentTime = Carbon\Carbon::now()
+                                ->locale('id')
+                                ->settings(['formatFunction' => 'translatedFormat'])
+                                ->format('l, j F Y h:i a');
 @endphp
 
 @extends('apps.app-admin')
 
-@section('title', 'Buku Tamu')
+@section('title', 'Tambah Tamu')
 
 @section('content')
 
@@ -65,24 +68,9 @@
 
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                            <input id="notlp" class="form-control" type="number" name="notlp" value="{{ old ('notlp') }}">
+                            <input id="notlp" class="form-control" type="text" name="notlp" value="{{ old ('notlp') }}">
                         </div>
                     </div>
-                    {{-- <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <select id="needs1" name="needs1" class="form-control" required>
-                                <option value="">-- Pilih Layanan --</option>
-                                <option value="Press">Press</option>
-                                <option value="Internet">Internet</option>
-                                <option value="another">Lainnya</option>
-                              </select>
-                            <textarea name="needs2" id="needs2" cols="30" rows="5" class="form-control" type="text"  placeholder="Masukkan Keperluan Lainnya"></textarea>
-                        </div>
-                    </div> --}}
-
-
                     <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Keperluan <span class="required" style="color: red">*</span>
                         </label>
@@ -152,7 +140,7 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </a>
                         <button id="clearButton" class="btn btn-danger">Clear Signature</button>
-                        <button id="save" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-success">Save</button>
                             {{-- <div id="sig"></div>
                             <br><br>
                             <a href="{{ route('guest.content') }}">

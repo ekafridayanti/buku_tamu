@@ -123,12 +123,7 @@
             <input type="hidden" id="signature-base64" name="signature">
             <br>
             <button id="clearButton" class="btn btn-danger">Clear Signature</button>
-            <button id="save" class="btn btn-success">Save</button>
-            {{-- <div id="sig"></div>
-            <br><br>
-            <button id="clear" class="btn btn-danger">Clear Signature</button>
-            <button id="save" class="btn btn-success">Save</button>
-            <textarea id="signature" name="signature" class="widget" style="display: none"></textarea> --}}
+            <button type="submit" class="btn btn-success">Save</button>
           </div>
         </div>
       </form>

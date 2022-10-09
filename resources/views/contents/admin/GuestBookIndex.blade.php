@@ -97,7 +97,7 @@
                 <div class="col-sm-12">
                   <div class="card-box table-responsive">                   
                     @include('components.admin.alert-massage')
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th class="text-center" style="width: 35px">No</th>
@@ -137,6 +137,26 @@
                           </td>
                         </tr>
                         @endforeach  
+
+                        {{-- search --}}
+                        <form action="{{ route('guest.content') }}" method="GET">
+                          <select name="key" id="key">
+                            <option value="name">Nama</option>
+                            <option value="sector">Yang dituju</option>
+                            <option value="institute"> Unit Kerja/Intansi</option>
+                            <option value="needs">Keperluan</option>
+                            <option value="notlp">No Telepon</option>
+                          </select>
+                          <input type="text" name="value" id="value" placeholder="cari..">
+                          
+                          <input type="submit" value="Submit">
+                          <a href="{{ route('guest.content') }}">
+                            <button type="button" class="btn btn-secondary"><i class="fa fa-refresh"></i></button>
+                        </a>
+                        </form>
+                        <br><br>
+                        {{-- end search --}}
+
                       </tbody>
                       <tfoot>
                           <th class="text-center">No</th>
@@ -149,7 +169,8 @@
                           <th class="text-center">TTD</th>
                           <th class="text-center">Action</th>                       
                       </tfoot>
-                    </table>                    
+                    </table> 
+                    {{ $guest->links() }}                   
                   </div>
                 </div>
             </div>
@@ -158,64 +179,7 @@
     </div>
 </div>
 
-  {{-- CREATE GUEST BOOK --}}
-        <!-- modals -->
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-              <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Tambah Data Tamu</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="{{ route('guest.create') }}" method="POST">
-                  @csrf
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 ">
-                      <input name = "name" type="text" id="name" required="required" class="form-control ">
-                    </div>
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Instansi<span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 ">
-                      <input name = "institute" type="text" id="institute" required="required" class="form-control ">
-                    </div>
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Keperluan<span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 ">
-                      <input name = "needs" type="textarea" id="needs" required="required" class="form-control ">
-                    </div>
-                    
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">TTD<span class="required">*</span>
-                    </label>
-                    {{-- <div class="col-md-6 col-sm-6 "> --}}
-                      <div id="sig"></div>
-                      </div>
-                  {{-- </div>    --}}
-              </div>
-              <div class="modal-footer">
-                  
-                <button id="clear" class="btn btn-danger">Clear Signature</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
-              </div>
-            </form>
-            </div>
-          </div>
-        </div>
-        <!-- /modals -->
-      </div>
-    </div>
-  
-  {{-- VIEW GUEST BOOK --}}
+{{-- VIEW GUEST BOOK --}}
 
 @foreach ($guest as $g)
   <div class="modal fade" id="modal-view{{ $g->id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -251,12 +215,6 @@
             <label>No Telepon</label>
             <input type="text" name="needs{{ $g->id }}" value="{{ $g->notlp }}" class="form-control" readonly>
           </div>
-
-          {{-- <div class="form-group">
-            <label>Tanda Tanda</label>
-            <input type="text" name="signature{{ $g->id }}" value="{{ $g->id }}" class="form-control" readonly>
-          </div> --}}
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

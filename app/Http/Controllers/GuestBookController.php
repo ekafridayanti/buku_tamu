@@ -8,27 +8,35 @@ use PDF;
 use Carbon\Carbon;
 class GuestBookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $guest = DB::table('guest_books')->paginate(5000);
+        $key = $request->key;
+        $value = $request->value;
+        if ($key !=null && $value !=null) {
+            $guest = DB::table('guest_books')->where($key, 'like', "%{$value}%")->paginate(25);
+        } else {
+            $guest = DB::table('guest_books')->paginate(25);
+        }
+             
         $data = ['guest'=>$guest];
         return view('contents.admin.GuestBookIndex', $data);
     }
-
+    public function add()
+    {
+        return view('contents.admin.GuestAdd');
+    }
     public function create(Request $request)
     {
         $request->validate([
             'name' => "required",
             'sector'=> "required",
             'institute' => "required",
-            'notlp' => "required",
+            'notlp' => "required|numeric",
             'signature' => "required",
         ],[
             'signature.required'=>'Tanda tangan tidak boleh kosong',
-            
+            'signature.numeric'=>'Nomor Telepon tidak boleh huruf!'
             ]);
-
-        
 
         $needs=$request->needs1;
         if ($needs=='another') {
@@ -66,16 +74,6 @@ class GuestBookController extends Controller
             // 'f_title' => 'Hapus data sukses.',
             'f_msg' => 'Data tamu berhasil dihapus.',
         ]);
-    }
-
-    public function input()
-    {
-        return view('contents.admin.GuestInputIndex');
-    }
-
-    public function add()
-    {
-        return view('contents.admin.GuestAdd');
     }
 
     public function print()
@@ -116,7 +114,7 @@ class GuestBookController extends Controller
         } else {
             $startDate = now()->subDays($request->range)->endOfDay()->toDateTimeString();
             $endDate = now()->toDateTimeString();
-
+            //dapetin semua data yang dicari
             $x =  DB::table('guest_books')
                     ->whereDate('created', '>=', $startDate)
                     ->get();

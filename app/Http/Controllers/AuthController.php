@@ -18,19 +18,19 @@ class AuthController extends Controller
                             'username' => "required",
                             'password' => "required",
         ],
-        ['username.required'=> 'Username yang Anda masukkan salah!',
-         'password.required'=> 'Password yang Anda masukkan salah!',
+        ['username.required'=> 'Username tidak bpleh kosong!',
+         'password.required'=> 'Password tidak bpleh kosong!',
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->route('dashboard');
         }
 
         return back()->withErrors([
             'username' => 'The provided credentials do not match our records.',
-        ])->onlyInput('username');
+        ]);
     }
 
     public function logout()
