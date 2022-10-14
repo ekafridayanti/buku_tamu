@@ -68,7 +68,7 @@
 
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                            <input id="notlp" class="form-control" type="text" name="notlp" value="{{ old ('notlp') }}">
+                            <input id="notlp" class="form-control" type="number" name="notlp" value="{{ old ('notlp') }}">
                         </div>
                     </div>
                     <div class="item form-group">
