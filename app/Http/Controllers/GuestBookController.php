@@ -35,7 +35,7 @@ class GuestBookController extends Controller
             'signature' => "required",
         ],[
             'signature.required'=>'Tanda tangan tidak boleh kosong',
-            'signature.numeric'=>'Nomor Telepon tidak boleh huruf!'
+            'notlp.numeric'=>'Nomor Telepon harus diisi dengan angka!'
             ]);
 
         $needs=$request->needs1;
@@ -43,7 +43,6 @@ class GuestBookController extends Controller
             $needs=$request->needs2;
             if (empty($needs)) {
                 return redirect()->back()->withErrors(['massage'=>'Masukkan Keperluan Lainnya pada Area Kolom!'])->withInput($request->input()) ;
-
             }
         } 
         
@@ -71,7 +70,6 @@ class GuestBookController extends Controller
 
         return redirect()->route('guest.content')->with([
             'f_bg' => 'success',
-            // 'f_title' => 'Hapus data sukses.',
             'f_msg' => 'Data tamu berhasil dihapus.',
         ]);
     }
@@ -84,7 +82,7 @@ class GuestBookController extends Controller
     public function doPrint(Request $request) {
         $request->validate([
             'custom_start' => ['nullable', 'date', 'required_without:range', 'required_with:custom_end'],
-            'custom_end' => ['nullable', 'date', 'required_without:range', 'required_with:custom_start', 'after_or_equal:custom_start'],
+            'custom_end' => ['nullable', 'date', 'required_without:range',           'required_with:custom_start', 'after_or_equal:custom_start'],
             'range' => ['nullable', 'numeric', 'required_without:custom_start,custom_end']
         ],);
 
